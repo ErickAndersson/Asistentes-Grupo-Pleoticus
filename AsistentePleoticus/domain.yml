@@ -1,0 +1,281 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_animus
+  - task_finished
+  - bot_skills
+  - bot_info
+  - where_am_i
+  - system_info
+  - bot_usage
+  - how_to_progress
+  - where_to_go
+  - how_to_play
+  - scrum_works
+  - daily_scrum
+  - product_backlog
+  - sprint_backlog
+  - sprint_review
+  - scrum_master
+  - product_owner
+  - sprint_planning
+  - sprint_retrospective
+  - thanks
+  - task_story_points
+  - task_description
+  - task_priority
+  - aviso_reunion
+  - permiso_hablar
+  - fin_hablar
+  - inicio_reunion
+  - trabajo
+  - descansar
+  - evento_reunion
+  - evento_descanso
+  - evento_trabajo
+  - out_of_scope
+  - respuesta_daily_presente
+  - respuesta_daily_pasado
+  - respuesta_negativa
+  - respuesta_positiva
+
+entities:
+  - place
+  - evento
+  - horas
+  - duracion
+  - dia
+#  - nombre
+#  - tiempo
+
+actions:
+  - action_get_tarea
+  - action_tarea_finalizada
+  - action_descripcion_tarea
+  - action_prioridad_tarea
+  - action_permiso_hablar
+#  - action_fin_hablar
+  - action_evento
+  - action_default_fallback
+
+slots:
+  tarea:
+    type: bool
+  cantidad_tareas:
+    type: float
+    initial_value: 0.0 
+    min_value: 0.0
+    max_value: 100.0 
+  descripcion_tarea:
+    type: text  
+  prioridad_tarea:
+    type: text
+  evento:
+    type: text 
+    initial_value: "None"
+  duracion:
+    type: text
+    initial_value: "None"
+  horas:
+    type: text
+    initial_value: "None"
+  dia: 
+    type: text
+    initial_value: "hoy"
+ # nombre:
+  #  type: text  
+    
+
+responses:
+  utter_greet:
+  - text: "¡Hola! ¿Cómo estás?"
+  - text: "¡Hola! Me alegro de verte por aquí. ¿Qué tal estás?"
+  - text: "¡Buenas! ¿Cómo andás hoy?"
+
+  utter_animus:
+  - text: "Bien! Muchas gracias"
+  - text: "Excelente!"
+
+  utter_cheer_up:
+  - text: "Eso es realmente malo, pero no te preocupes"
+  - text: "Lamento que no estés bien"
+
+  utter_thanks:
+  - text: De nada!
+  - text: A vos!
+  - text: No hay de que!
+
+  utter_help:
+  - text: "¿Con que te puedo ayudar?"
+  - text: "¿Qué necesitas?"
+  - text: "¿En qué puedo ayudarte?"
+  - text: "¿Como puedo ayudarte?"
+
+  utter_anything_else:
+  - text: "¿Con qué más te puedo ayudar?"  
+  - text: "¿En qué más puedo ayudarte?"
+
+  utter_happy:
+  - text: "¡Me alegro muchísimo por ello! Espero que sigas así"
+  - text: "Genial!"
+  - text: "Me alegro!"
+  
+  utter_goodbye:
+  - text: "¡Adiós!, ante cualquier duda sabes donde encontrarme."
+  - text: "Hasta luego!, no dudes en volver a consultarme."
+  - text: "Hasta pronto, ante cualquier duda sabes donde encontrarme."
+
+  utter_info:
+  - text: "Soy un asistente que te guiará en este tutorial."
+  - text: "Soy un asistente que te guiará a lo largo de este tutorial."
+  - text: "Soy tu asistente, estoy aquí para responder tus dudas."
+  - text: "Soy tu asistente, no dudes en consultarme cualquier inquietud." 
+
+  utter_location:
+  - text: "Para ver dónde estás ubicado, simplemente presioná\nel botón al lado de la puerta!"
+    image: "https://i.imgur.com/TrBwKqp.png"
+
+  utter_info_system:
+  - text: "Estamos en un entorno virtual de desarrollo, y tu\ntrabajo aquí es ir pasando por las diferentes salas\na medida que vayas avanzando con tu tareas.\nDependiendo de tu rol deberás a acceder a salas\ndeterminadas junto a tus compañeros. Allí podrás\ncharlar con ellos. Los pasillos son de comunicación\nglobal, es decir, todos pueden oírte; pero dentro\nde las salas, sólo aquellos que estén allí contigo.\nRecuerda que puedes consultarme lo que quieras en\ncualquier momento (mientras tenga que ver con el\nsistema ;) )."
+
+  utter_break:
+  - text: "Ya hiciste mucho por ahora, tomate un break."
+  - text: "Tomate un cafe, en un rato seguis."
+
+  utter_progress:
+  - text: "Anda al tablero y fijate cual es tu proxima tarea."
+
+  utter_where_to_go/recepcion:
+  - text: "La sala que buscás está señalada en rojo."
+    image: "https://i.imgur.com/p5TqNV5.png"
+
+  utter_where_to_go/sala_de_conferencias:
+  - text: "La sala que buscás está señalada en rojo."
+    image: "https://i.imgur.com/VDJyf2g.png"
+
+  utter_where_to_go/oficina_ejecutiva:
+  - text: "La sala que buscás está señalada en rojo."
+    image: "https://i.imgur.com/JPe14RS.png"
+    
+  utter_where_to_go/oficina_de_desarrollo:
+  - text: "La sala que buscás está señalada en rojo."
+    image: "https://i.imgur.com/7V3E52h.png"  
+
+  utter_where_to_go/sala_de_descanso:
+  - text: "La sala que buscás está señalada en rojo."
+    image: "https://i.imgur.com/xAlCx3a.png"  
+    
+  utter_how_to_play:
+  - text: "Los controles son los siguientes."
+    image: "https://i.imgur.com/dhWdbts.png"
+
+  utter_daily1:
+  - text: "El equipo mantiene una reunion diaria llamada 'daily scrum'.\nUsualmente estas reuniones se realizan en el mismo lugar y a\nla misma hora, en cada uno de los días. Idealmente se realiza\nen la mañana, a fin de definir el contexto para el resto del\ndía de trabajo. La reunión es breve y se traten puntos\nimportantes, no duran más de 15 minutos."
+
+  utter_daily2:
+  - text: "Durante la reunión, cada miembro del equipo contesta a tres preguntas:\n- ¿Qué has hecho desde ayer?\n- ¿Qué es lo que estás planeando hacer hoy?\n- ¿Has tenido algún problema que te haya impedido alcanzar\ntu objetivo?"
+
+  utter_scrum_works:
+  - text: "Es un proceso en el que se aplican de manera regular un\nconjunto de buenas prácticas para trabajar colaborativamente,\nen equipo y obtener el mejor resultado posible de proyectos,\ncaracterizado por:\n- Adoptar una estrategia de desarrollo\nincremental, en lugar de la planificación y ejecución completa\ndel producto.\n- Basar la calidad del resultado más en el conocimiento\ntácito de las personas en equipos auto organizados, que en\nla calidad de los procesos empleados.\n- Solapar las diferentes fases del desarrollo, en lugar de\nrealizar una tras otra en un ciclo secuencial o en cascada."
+    image: "https://i.imgur.com/XjWi7uZ.png"
+
+  utter_product_backlog:
+  - text: "El product backlog es un documento de alto nivel para todo\nel proyecto. Contiene descripciones genéricas de todos los\nrequerimientos, funcionalidades deseables, etc.priorizadas\nsegún su valor para el negocio (business value).Es el qué va\na ser construido. Es abierto y cualquiera puede modificarlo."
+  
+  utter_sprint_backlog:
+  - text: "El sprint backlog es un documento detallado donde\nse describe el cómo el equipo va a implementar los\n requisitos durante el siguiente sprint. Las tareas se\ndividen en horas con ninguna tarea de duración superior\na 16 horas. Si una tarea es mayor de 16 horas, deberá\nser rota en mayor detalle. Las tareas en el sprint\n backlog nunca son asignadas, son tomadas por los miembros\ndel equipo del modo que les parezca oportuno."
+  
+  utter_sprint_review:
+  - text: "El Sprint Review es uno de los cinco eventos de Scrum,\ny ocurre en el final del Sprint, para inspeccionar el\nincremento y adaptar el Product Backlog en caso de que\nsea necesario. Es una gran oportunidad para poder recibir\nfeedback sobre el desarrollo del producto.Es una reunión\ninformal, y el objetivo principal del Sprint Review es\nbrindar transparencia tanto al equipo como al cliente.\nTiene una duración de 4 horas para Sprints de 4 semanas. "
+
+  utter_scrum_master:
+  - text: "El Scrum Master (SM) o facilitador de proyectos,\nes la figura que lidera los equipos en la gestión\nágil de proyectos. Su misión es que los equipos de\ntrabajo alcancen sus objetivos hasta llegar a la\nfase de «sprint final», eliminando cualquier\ndificultad que puedan encontrar en el camino."
+    
+  utter_product_owner:
+  - text: "El Product Owner es la persona responsable de\nasegurar que el equipo aporte valor al negocio.\nRepresenta las partes interesadas internas y\nexternas, por lo que debe comprender y apoyar las\n necesidades de todos los usuarios en el negocio,\nasí como también las necesidades y el funcionamiento\n del Equipo Scrum."
+    
+  utter_sprint_planning:
+  - text: "Al inicio del ciclo Sprint (cada 15 o 30 días),\nuna 'Reunión de Planificación del Sprint' se lleva\na cabo. Se selecciona que trabajo se hará en un\ntiempo menor a ocho horas."
+
+  utter_sprint_retrospective:
+  - text: "Después de cada sprint, se lleva a cabo una\nretrospectiva del sprint, en la cual todos los\nmiembros del equipo dejan sus impresiones sobre\nel sprint recién superado. El propósito de la\nretrospectiva es realizar una mejora continua\ndel proceso. Esta reunión tiene un tiempo fijo\nde cuatro horas."
+
+  utter_default:
+  - text: "No entiendo lo que estás diciendo, ¿podrías repetirlo?"
+  - text: "No te entiendo, ¿podrías repetirlo?"
+  - text: "Disculpa, no entendí. ¿Podrías repetir lo que dijiste?"
+
+  utter_prueba_task_story_points:
+  - text: "task story points prueba"
+
+  utter_aviso_reunion:
+  - text: "Acordate que en 5 minutos comienza la daily meeting."
+  - text: "Recordá que en 5 minutos empieza la daily meeting."
+  - text: "Acordate que en 5 minutos empieza la daily meeting."
+  - text: "Recordá que en 5 minutos comienza la reunión diaria."
+  - text: "Acordate que en 5 minutos empieza la reunión diaria."
+  - text: "Acordate que en 5 minutos comienza la reunión diaria."
+
+  utter_inicio_reunion:
+  - text: "!p_Buenos días, le doy comienzo a la reunión."
+  - text: "!p_Buen día, a partir de este momento comienza la reunión."
+ 
+  utter_descansar:
+  - text: "Ya trabajaste demasiado, descansa un poco."
+  - text: "Tomate un descanso, ya trabajaste suficiente."
+  - text: "Es hora de descansar, ya trabajaste suficiente."
+  
+  utter_trabajo:  
+  - text: "Ya descansaste demasiado, es tiempo de volver a tu trabajo."
+  - text: "Ya te tomaste un tiempo de descanso, es hora de volver a trabajar."
+  - text: "Es hora de volver a trabajar, ya te tomaste un descanso."
+
+  utter_evento:
+  - text: "Ya se registró la entrada del evento, podés verla en el tablero."
+  - text: "Tu evento fue cargado con éxito. Podrás verlo en el tablero."
+  - text: "Evento registrado con éxito, puede ser visto en el tablero."
+
+  utter_primera_pregunta_daily: #qué has hecho ayer?
+  - text: "!p_Qué hiciste ayer?"
+  - text: "!p_Qué estuviste haciendo ayer?"
+  - text: "!p_En qué trabajaste ayer?"
+
+  utter_segunda_pregunta_daily: #¿qué estás planeando hacer hoy?
+  - text: "!p_Bien, qué estás planeando hacer hoy?"
+  - text: "!p_Ok, qué estás planeando hacer hoy?"
+  - text: "!p_Bien, que vas a hacer hoy?"
+  - text: "!p_Genial, qué vas a hacer hoy?" 
+
+  utter_tercera_pregunta_daily: #¿has tenido algún problema que te haya impedido alcanzar tu objetivo?
+  - text: "!p_Ok, tuviste algún problema?"
+  - text: "!p_Surgió algún problema con lo que estuviste haciendo?"
+  - text: "!p_Estás trabado con algo?"
+
+  utter_finalizo_bien:
+  - text: "!p_Bien, seguí así! Gracias por tu colaboración."
+  - text: "!p_Bien, seguí así! Gracias por tu colaboración."
+  - text: "!p_Ok, seguí trabajando así! Gracias por tu aporte."
+  - text: "!p_Me alegro que no hayas tenido problemas. Gracias por tu aporte."
+  - text: "!p_Bien, seguí trabajando así! Gracias por tu aporte."
+  - text: "!p_Que bueno, me alegro que no tengas problemas. Gracias por tu aporte."
+  - text: "!p_Que bueno, me alegro que no tengas problemas. Gracias por colaborar."
+
+  utter_finalizo_mal:
+  - text: "!p_Espero que puedas solucionar estos inconvenientes, gracias por tu aporte."
+  - text: "!p_Espero que puedas solucionar estos problemas, gracias por tu colaboración."
+  - text: "!p_Espero que puedas solucionar esto, gracias por colaborar."
+  - text: "!p_Espero que puedas solucionarlos para mañana, gracias por tu colaboración."
+  - text: "!p_Espero que puedas solucionarlos para mañana, gracias por tu aporte."
+
+  utter_termino:  
+  - text: "!t_Termino la conversacion"
+
+  utter_preguntar_problema:
+  - text: "!p_¿Qué problemas tuviste?"
+  - text: "!p_¿Qué inconvenientes tuviste?"
+  - text: "!p_Por favor, desarrolla los problemas que tuviste"
+  - text: "!p_¿Con qué tuviste problemas?"

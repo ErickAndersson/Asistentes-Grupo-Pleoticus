@@ -1,0 +1,59 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_animus
+  - update_data
+
+
+actions:
+  - action_update
+
+
+responses:
+  utter_greet:
+  - text: "¡Hola! ¿Cómo estás?"
+  - text: "¡Hola! Me alegro de verte por aquí. ¿Qué tal estás?"
+  - text: "¡Buenas! ¿Cómo andás hoy?"
+
+  utter_animus:
+    - text: "Bien! Muchas gracias"
+    - text: "Excelente!"
+
+  utter_cheer_up:
+  - text: "Eso es realmente malo, pero no te preocupes"
+  - text: "Lamento que no estés bien"
+
+  utter_thanks:
+  - text: De nada!
+  - text: A vos!
+  - text: No hay de que!
+
+  utter_help:
+  - text: "¿Con que te puedo ayudar?"
+  - text: "¿Qué necesitas?"
+  - text: "¿En qué puedo ayudarte?"
+  - text: "¿Como puedo ayudarte?"
+
+  utter_anything_else:
+  - text: "¿Con qué más te puedo ayudar?"  
+  - text: "¿En qué más puedo ayudarte?"
+
+  utter_happy:
+  - text: "¡Me alegro muchísimo por ello! Espero que sigas así"
+  - text: "Genial!"
+  - text: "Me alegro!"
+  
+  utter_goodbye:
+  - text: "¡Adiós!, ante cualquier duda sabes donde encontrarme."
+  - text: "Hasta luego!, no dudes en volver a consultarme."
+  - text: "Hasta pronto, ante cualquier duda sabes donde encontrarme."
+
+  utter_update:
+  - text: "Comunicación realizada"
+  - text: "Los asistentes pudieron comunicarse"
+  - text: "La comunicacion se efectuó"
+  - text: "Se logró la comunicacion entre los asistentes"
